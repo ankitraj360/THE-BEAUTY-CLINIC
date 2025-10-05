@@ -107,7 +107,8 @@ app.post('/api/generate', async (req, res) => {
     }
     const nRaw = parseInt(req.body?.n, 10);
     const n = Number.isFinite(nRaw) ? Math.max(1, Math.min(4, nRaw)) : 1;
-    const size = ['256x256', '512x512', '1024x1024'].includes(req.body?.size) ? req.body.size : '512x512';
+    const allowedSizes = ['1024x1024', '1024x1536', '1536x1024'];
+    const size = allowedSizes.includes(req.body?.size) ? req.body.size : '1024x1024';
 
     let images = null;
     let provider = 'fallback';
