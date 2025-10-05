@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imagination → Image</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Imagination → Image</h1>
+        <p class="tagline">Type your dream. Get a picture.</p>
+      </header>
+
+      <main class="main">
+        <form id="prompt-form" class="prompt-form">
+          <input id="prompt-input" type="text" placeholder="e.g., A cozy cabin in a misty pine forest at sunrise" autocomplete="off" />
+          <select id="size-select">
+            <option value="512x512" selected>512×512</option>
+            <option value="256x256">256×256</option>
+            <option value="1024x1024">1024×1024</option>
+          </select>
+          <select id="count-select">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <button id="generate-btn" type="submit">Generate</button>
+        </form>
+
+        <div id="status" class="status" hidden></div>
+
+        <section id="gallery" class="gallery"></section>
+      </main>
+
+      <footer class="footer">
+        <span>Powered by OpenAI (fallback friendly)</span>
+        <a href="https://platform.openai.com/" target="_blank" rel="noreferrer">Get an API key</a>
+      </footer>
+    </div>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>
